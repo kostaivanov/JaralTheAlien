@@ -41,7 +41,7 @@ public class ScoreController : MonoBehaviour
         if (yuppieTimer > 1f)
         {
             var difference = score - yuppieScore;
-            if (difference > 40 && canvasAS.isPlaying == false)
+            if (difference > 50 && canvasAS.isPlaying == false)
             {
                 canvasAS.PlayOneShot(yupppieSound);
                 Debug.Log("Yuppie - " + yuppieScore);

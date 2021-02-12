@@ -159,6 +159,13 @@ public class PlayerHealth : MonoBehaviour
 
     private void KillPlayerAndRestartGame()
     {
+        if (PermanentFunctions.instance.lives == 0)
+        {
+            PermanentFunctions.instance.lives = 3;
+
+        }
+        PermanentFunctions.instance.lives--;
+
         playerSoundController.PlaySoundDead();
         playerSoundController.StopSoundMovingShip();
         playerMovement.idlePlayed = false;

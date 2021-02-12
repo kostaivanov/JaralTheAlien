@@ -5,7 +5,7 @@ using UnityEngine;
 public class SpawnMeteorites : MonoBehaviour
 {
 
-    private float nextSpawnTimeBig, nextSpawnTimeMedium, nextSpawnTimeSmall;
+    private float nextSpawnTimeBig = 0f;
     private string[] meteoritesNames = new string[] { "BigMeteorite" , "MediumMeteorite", "SmallMeteorite" };
     private string[] laserNames = new string[] { "LaserItem", "LaserItemRed" };
 

@@ -7,6 +7,9 @@ using UnityEngine.UI;
 public class RetryHandler : MonoBehaviour, IPointerDownHandler
 {
     [SerializeField] private CanvasManager canvasManager;
+    [SerializeField] private AdMobManager adMobManager;
+
+
     [SerializeField] private GameObject objectPoolerObj;
     [SerializeField] private ScoreController scoreController;
     private ObjectPooler objectPooler;
@@ -61,6 +64,12 @@ public class RetryHandler : MonoBehaviour, IPointerDownHandler
     internal IEnumerator LoadingScene()
     {
         loadingObj.SetActive(true);
+
+        if (PermanentFunctions.instance.lives == 0)
+        {
+            //Show rewarded video ad
+            adMobManager.ShowVideoRewardAd();
+        }
 
         retryButton.enabled = false;
         homeButton.enabled = false;

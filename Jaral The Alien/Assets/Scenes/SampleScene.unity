@@ -6144,6 +6144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvasManager: {fileID: 1273040}
+  adMobManager: {fileID: 1837682004}
   objectPoolerObj: {fileID: 1800607620}
   scoreController: {fileID: 1273041}
   starsBackground: {fileID: 702392196}
@@ -37562,6 +37563,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   joystick: {fileID: 2929252283821042477}
+  adMobManager: {fileID: 1837682004}
   allMovingObjects: {fileID: 1492313133}
   player: {fileID: 644257242}
   scoreText: {fileID: 1655726775}
@@ -37980,6 +37982,49 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7588ebded6f951945a9e50ac00e4d507, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1837682003
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1837682005}
+  - component: {fileID: 1837682004}
+  m_Layer: 0
+  m_Name: AdMobManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1837682004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1837682003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 340a0746ad62ccf47804281975a4a027, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1837682005
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1837682003}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.0409784, y: 2.2310274, z: -0.33113137}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 20
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1895054650
 GameObject:
   m_ObjectHideFlags: 0

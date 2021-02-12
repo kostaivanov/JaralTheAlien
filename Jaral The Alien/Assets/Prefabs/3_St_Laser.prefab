@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 3460225292818046445}
   - component: {fileID: 3460225292818046442}
   - component: {fileID: 3460225292818046443}
-  - component: {fileID: -4377445487940906215}
   m_Layer: 0
   m_Name: 3_St_Laser
   m_TagString: Untagged
@@ -4814,20 +4813,6 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
---- !u!114 &-4377445487940906215
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3460225292818046440}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1cb28a16c7079543bbba49b0c777e1c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  meteoriteAS: {fileID: 0}
-  breakMeteoriteSound: {fileID: 8300000, guid: 346084e594911ae48abf364848ed236c, type: 3}
 --- !u!1 &3460225293826313819
 GameObject:
   m_ObjectHideFlags: 0

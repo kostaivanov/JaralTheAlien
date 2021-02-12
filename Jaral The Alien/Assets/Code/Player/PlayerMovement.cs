@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float moveSpeed;
     [SerializeField] internal Rigidbody2D rigidBody;
     [SerializeField] internal DashHandler dashButton;
-    [SerializeField] internal JoystickController joyStickController;
+    //[SerializeField] internal JoystickController joyStickController;
     [SerializeField] internal Joystick joystick;
     [SerializeField] internal Movehandler moveHandlerUp, moveHandlerDown;
     private PlayerSoundController playerSoundController;

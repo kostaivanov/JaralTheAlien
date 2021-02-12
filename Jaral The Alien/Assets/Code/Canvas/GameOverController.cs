@@ -8,6 +8,8 @@ using System;
 public class GameOverController : MonoBehaviour
 {
     [SerializeField] private Joystick joystick;
+    [SerializeField] private AdMobManager adMobManager;
+
 
     [SerializeField] private GameObject allMovingObjects, player;
     [SerializeField] internal Text scoreText;
@@ -43,6 +45,12 @@ public class GameOverController : MonoBehaviour
 
     private void OnEnable()
     {
+        if (PermanentFunctions.instance.lives == 0)
+        {
+            //Request rewarded video ad
+            adMobManager.RequestRewardBasedVideo();
+        }
+
         Application.targetFrameRate = 30;
         StopAllCoroutines();
 
