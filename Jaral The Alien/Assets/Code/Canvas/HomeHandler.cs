@@ -8,6 +8,8 @@ using UnityEngine.UI;
 public class HomeHandler : MonoBehaviour, IPointerDownHandler
 {
     [SerializeField] private CanvasManager canvasManager;
+    [SerializeField] private AdMobManager adMobManager;
+
     //[SerializeField] private GameObject player;
     [SerializeField] private GameObject objectPoolerObj;
     [SerializeField] private Slider lasersCountSlider, bigBlastSlider;
@@ -22,6 +24,14 @@ public class HomeHandler : MonoBehaviour, IPointerDownHandler
 
     public void OnPointerDown(PointerEventData eventData)
     {
+        PermanentFunctions.instance.homeButtonClicks++;
+        if (PermanentFunctions.instance.homeButtonClicks == 3)
+        {
+            PermanentFunctions.instance.homeButtonClicks = 0;
+            //Show rewarded video ad
+            adMobManager.ShowInterstitialAd();
+        }
+
         if (this.transform.parent.gameObject.name == "InstructionsImage")
         {
             canvasManager.SwitchCanvas(CanvasType.Menu);

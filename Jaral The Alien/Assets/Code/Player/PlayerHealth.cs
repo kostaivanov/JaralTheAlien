@@ -26,6 +26,17 @@ public class PlayerHealth : MonoBehaviour
     private bool gotLaser = false;
     private int laserCount = 0;
 
+    [SerializeField] private CapsuleCollider2D magnetCapsuleCollider;
+    [SerializeField] private CircleCollider2D playerTriggerCollider;
+    private bool isDead;
+
+    public bool IsDead
+    {
+        get { return isDead; }
+        set { isDead = value; }
+    }
+
+
     private void Awake()
     {
         //startingPosition = this.transform.position;
@@ -34,6 +45,8 @@ public class PlayerHealth : MonoBehaviour
 
     private void Start()
     {
+        IsDead = false;
+
         spriteRenderer = GetComponent<SpriteRenderer>();
         shakeObject = GetComponent<ShakeObjectWhenDamaged>();
         playerMovement = GetComponent<PlayerMovement>();
@@ -53,6 +66,7 @@ public class PlayerHealth : MonoBehaviour
 
     private void Update()
     {
+        Debug.Log(PermanentFunctions.instance.lives);
         if(PermanentFunctions.instance.laserCount <= 0)
         {
             PermanentFunctions.instance.canShoot = false;
@@ -159,12 +173,18 @@ public class PlayerHealth : MonoBehaviour
 
     private void KillPlayerAndRestartGame()
     {
-        if (PermanentFunctions.instance.lives == 0)
-        {
-            PermanentFunctions.instance.lives = 3;
+        IsDead = true;
 
-        }
-        PermanentFunctions.instance.lives--;
+        magnetCapsuleCollider.enabled = false;
+        playerTriggerCollider.enabled = false;
+
+        //if (PermanentFunctions.instance.lives == 0)
+        //{
+        //    PermanentFunctions.instance.lives = 3;
+
+        //}
+        //PermanentFunctions.instance.lives--;
+
 
         playerSoundController.PlaySoundDead();
         playerSoundController.StopSoundMovingShip();
@@ -237,8 +257,11 @@ public class PlayerHealth : MonoBehaviour
             playerMovement.enabled = true;
             playerMovement.idlePlayed = false;
         }
-        
+
+        magnetCapsuleCollider.enabled = true;
+        playerTriggerCollider.enabled = true;
+
         health = 90;
-       
+        IsDead = false;
     }
 }

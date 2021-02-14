@@ -19,7 +19,7 @@ public class LaserItemsController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D otherObject)
     {
-        if (otherObject.tag == "Player")
+        if (otherObject.tag == "Player" && otherObject.GetComponent<PlayerHealth>().IsDead == false)
         {
             if (played == false)
             {

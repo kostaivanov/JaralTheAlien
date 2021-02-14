@@ -15,6 +15,14 @@ public class AdMobManager : MonoBehaviour
     internal InterstitialAd interstitial;
     private RewardedAd rewardedAd;
 
+    private void Start()
+    {
+        // Initialize the Google Mobile Ads SDK.
+        MobileAds.Initialize(initStatus => { });
+        //MobileAds.Initialize(app_ID);
+
+    }
+
     public void RequestInterstitial()
     {
 

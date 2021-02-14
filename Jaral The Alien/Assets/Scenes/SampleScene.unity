@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 1273040}
   - component: {fileID: 1273041}
   - component: {fileID: 1273042}
+  - component: {fileID: 1273043}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -353,6 +354,26 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1273043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1273035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e9316665ca992447b9684d44f14d2c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goObj: {fileID: 633627370}
+  coolObj: {fileID: 2038280959}
+  goodObj: {fileID: 1720754021}
+  awesomeObj: {fileID: 642249643}
+  godlike_Obj: {fileID: 999222849}
+  playerHealth: {fileID: 644257249}
+  inGame: {fileID: 1203313229}
+  gameOver: {fileID: 1761995241}
 --- !u!1 &26809627
 GameObject:
   m_ObjectHideFlags: 0
@@ -770,6 +791,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvasManager: {fileID: 1273040}
+  adMobLoading: {fileID: 1780541703}
   scoreController: {fileID: 1273041}
   goAnimator: {fileID: 633627374}
   coolAnimator: {fileID: 2038280960}
@@ -6145,6 +6167,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvasManager: {fileID: 1273040}
   adMobManager: {fileID: 1837682004}
+  adMobLoading: {fileID: 1780541703}
+  goAnimator: {fileID: 633627374}
   objectPoolerObj: {fileID: 1800607620}
   scoreController: {fileID: 1273041}
   starsBackground: {fileID: 702392196}
@@ -6867,6 +6891,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvasManager: {fileID: 1273040}
+  adMobManager: {fileID: 0}
   objectPoolerObj: {fileID: 1800607620}
   lasersCountSlider: {fileID: 1528152244}
   bigBlastSlider: {fileID: 516185437}
@@ -17613,7 +17638,6 @@ MonoBehaviour:
   moveSpeed: 8
   rigidBody: {fileID: 644257246}
   dashButton: {fileID: 677517037}
-  joyStickController: {fileID: 0}
   joystick: {fileID: 2929252283821042477}
   moveHandlerUp: {fileID: 1793962264}
   moveHandlerDown: {fileID: 1296349817}
@@ -17695,6 +17719,8 @@ MonoBehaviour:
     type: 3}
   lasersCountSlider: {fileID: 1528152244}
   bigBlastSlider: {fileID: 516185437}
+  magnetCapsuleCollider: {fileID: 1787287213}
+  playerTriggerCollider: {fileID: 644257248}
 --- !u!114 &644257250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23473,6 +23499,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2de8b567b89ee2d44af35d9336dc5c79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  adMobLoading: {fileID: 1780541703}
   allMovingObjects: {fileID: 1492313133}
   player: {fileID: 644257242}
   loadingObj: {fileID: 196567903}
@@ -24315,6 +24342,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78397dd8b609388428b88039a8d4e8f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  adMobManager: {fileID: 1837682004}
   joystick: {fileID: 2929252283821042477}
   goObj: {fileID: 633627370}
   coolObj: {fileID: 2038280959}
@@ -29336,6 +29364,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvasManager: {fileID: 1273040}
+  adMobLoading: {fileID: 0}
   scoreController: {fileID: 1273041}
   goAnimator: {fileID: 0}
   coolAnimator: {fileID: 0}
@@ -29897,7 +29926,7 @@ GameObject:
   - component: {fileID: 1203313234}
   m_Layer: 5
   m_Name: InGame
-  m_TagString: Untagged
+  m_TagString: InGame
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32410,7 +32439,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1666733118
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37530,6 +37559,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78397dd8b609388428b88039a8d4e8f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  adMobManager: {fileID: 0}
   joystick: {fileID: 2929252283821042477}
   goObj: {fileID: 633627370}
   coolObj: {fileID: 2038280959}
@@ -37564,6 +37594,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   joystick: {fileID: 2929252283821042477}
   adMobManager: {fileID: 1837682004}
+  adMobLoading: {fileID: 1780541703}
   allMovingObjects: {fileID: 1492313133}
   player: {fileID: 644257242}
   scoreText: {fileID: 1655726775}
@@ -37581,6 +37612,49 @@ MonoBehaviour:
   gameOverText: {fileID: 1167492689}
   pointsText: {fileID: 1655726775}
   playerSoundController: {fileID: 644257252}
+--- !u!1 &1780541702
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1780541704}
+  - component: {fileID: 1780541703}
+  m_Layer: 0
+  m_Name: AdMobBannerManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1780541703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1780541702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fae47d062a1d2ff4cbffbbca53c2d9a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1780541704
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1780541702}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -6.9658775, y: 3.700204, z: -3.9395387}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 21
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1787287211
 GameObject:
   m_ObjectHideFlags: 0
@@ -39138,6 +39212,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvasManager: {fileID: 1273040}
+  adMobManager: {fileID: 1837682004}
   objectPoolerObj: {fileID: 1800607620}
   lasersCountSlider: {fileID: 1528152244}
   bigBlastSlider: {fileID: 516185437}
@@ -39385,6 +39460,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvasManager: {fileID: 1273040}
+  adMobManager: {fileID: 1837682004}
   objectPoolerObj: {fileID: 1800607620}
   lasersCountSlider: {fileID: 1528152244}
   bigBlastSlider: {fileID: 516185437}

@@ -5,6 +5,8 @@ using UnityEngine.EventSystems;
 
 public class PauseController : MonoBehaviour
 {
+    [SerializeField] private AdMobManager adMobManager;
+
     [SerializeField] private Joystick joystick;
     [SerializeField] private GameObject goObj, coolObj, goodObj, awesomeObj, godlike_Obj;
     private Animator goAnimator, coolAnimator, goodAnimator, awesomeAnimator, godlikeAnimator;
@@ -30,6 +32,12 @@ public class PauseController : MonoBehaviour
 
     private void OnEnable()
     {
+        if (PermanentFunctions.instance.homeButtonClicks == 0)
+        {
+            //Request rewarded video ad
+            adMobManager.RequestInterstitial();
+        }
+
         Application.targetFrameRate = 30;
         Time.timeScale = 0;
         joystick.input = Vector2.zero;

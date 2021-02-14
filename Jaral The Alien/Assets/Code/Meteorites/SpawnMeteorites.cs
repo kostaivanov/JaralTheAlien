@@ -12,27 +12,49 @@ public class SpawnMeteorites : MonoBehaviour
     [SerializeField] private float addToSpawnTime;
     public float chanceSpawnRare = 0.1f;
 
+    private float InstantiationTimer;
+
+    private GameObject inGame;
     // Start is called before the first frame update
     void Start()
     {
-        nextSpawnTimeBig = Time.time + addToSpawnTime;
+        //nextSpawnTimeBig = Time.time + addToSpawnTime;
         PermanentFunctions.instance.OnIncreaseSpeed += IncreaseRateOfSpawnMeteorites;
 
         //nextSpawnTimeMedium = Time.time + 3f;
         //nextSpawnTimeSmall = Time.time + 1f;
-
+        InstantiationTimer = addToSpawnTime;
     }
 
     // Update is called once per frame
     void Update()
     {
-        SpawnMeteorite(nextSpawnTimeBig);
+        if (inGame == null)
+        {
+            inGame = GameObject.FindGameObjectWithTag("InGame");
+        }
+
+        //Debug.Log("Time - " + Time.time);
+        //Debug.Log("Next spawn - " + nextSpawnTimeBig);
+
+        if (inGame != null && inGame.activeSelf == true)
+        {
+            InstantiationTimer -= Time.deltaTime;
+            if (InstantiationTimer <= 0)
+            {
+                SpawnMeteorite(nextSpawnTimeBig);
+                InstantiationTimer = addToSpawnTime;
+                //Debug.Log("InstantiationTimer - " + InstantiationTimer);
+            }
+        }
+
+        
     }
 
     private void SpawnMeteorite(float spawnTime)
     {
-        if (Time.time > spawnTime)
-        {
+        //if (Time.time > spawnTime)
+        //{
             string typeObject = string.Empty;
 
             if (Random.Range(0f, 0.8f) > chanceSpawnRare)
@@ -54,8 +76,8 @@ public class SpawnMeteorites : MonoBehaviour
             obj.transform.rotation = this.transform.rotation;
             obj.SetActive(true);
 
-            nextSpawnTimeBig += addToSpawnTime;
-        }
+            //nextSpawnTimeBig += addToSpawnTime;
+        //}
     }
 
     private void IncreaseRateOfSpawnMeteorites()

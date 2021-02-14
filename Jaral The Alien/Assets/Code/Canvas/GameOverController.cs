@@ -9,7 +9,7 @@ public class GameOverController : MonoBehaviour
 {
     [SerializeField] private Joystick joystick;
     [SerializeField] private AdMobManager adMobManager;
-
+    [SerializeField] private AdMobBannerManager adMobLoading;
 
     [SerializeField] private GameObject allMovingObjects, player;
     [SerializeField] internal Text scoreText;
@@ -45,10 +45,18 @@ public class GameOverController : MonoBehaviour
 
     private void OnEnable()
     {
+        adMobLoading.RequestBigBanner();
+
         if (PermanentFunctions.instance.lives == 0)
         {
             //Request rewarded video ad
             adMobManager.RequestRewardBasedVideo();
+        }
+
+        if (PermanentFunctions.instance.homeButtonClicks == 0)
+        {
+            //Request rewarded video ad
+            adMobManager.RequestInterstitial();
         }
 
         Application.targetFrameRate = 30;
@@ -73,31 +81,31 @@ public class GameOverController : MonoBehaviour
         pointsText.enabled = true;
 
 
-        if (goAnimator != null && goAnimator.GetCurrentAnimatorStateInfo(0).IsName("GO!"))
-        {
-            goAnimator.enabled = false;
-            goMesh.enabled = false;
-        }
-        else if (coolAnimator != null && coolAnimator.GetCurrentAnimatorStateInfo(0).IsName("COOL!"))
-        {
-            coolAnimator.enabled = false;
-            coolMesh.enabled = false;
-        }
-        else if (goodAnimator != null && goodAnimator.GetCurrentAnimatorStateInfo(0).IsName("GOOD!"))
-        {
-            goodAnimator.enabled = false;
-            goodMesh.enabled = false;
-        }
-        else if (awesomeAnimator != null && awesomeAnimator.GetCurrentAnimatorStateInfo(0).IsName("AWESOME!"))
-        {
-            awesomeAnimator.enabled = false;
-            awesomeMesh.enabled = false;
-        }
-        else if (godlikeAnimator != null && godlikeAnimator.GetCurrentAnimatorStateInfo(0).IsName("GODLIKE!"))
-        {
-            godlikeAnimator.enabled = false;
-            godlikeMesh.enabled = false;
-        }
+        //if (goAnimator != null && goAnimator.GetCurrentAnimatorStateInfo(0).IsName("GO!"))
+        //{
+        //    //goAnimator.enabled = false;
+        //    //goMesh.enabled = false;
+        //}
+        //else if (coolAnimator != null && coolAnimator.GetCurrentAnimatorStateInfo(0).IsName("COOL!"))
+        //{
+        //    //coolAnimator.enabled = false;
+        //    coolMesh.enabled = false;
+        //}
+        //else if (goodAnimator != null && goodAnimator.GetCurrentAnimatorStateInfo(0).IsName("GOOD!"))
+        //{
+        //    //goodAnimator.enabled = false;
+        //    goodMesh.enabled = false;
+        //}
+        //else if (awesomeAnimator != null && awesomeAnimator.GetCurrentAnimatorStateInfo(0).IsName("AWESOME!"))
+        //{
+        //    //awesomeAnimator.enabled = false;
+        //    awesomeMesh.enabled = false;
+        //}
+        //else if (godlikeAnimator != null && godlikeAnimator.GetCurrentAnimatorStateInfo(0).IsName("GODLIKE!"))
+        //{
+        //    //godlikeAnimator.enabled = false;
+        //    godlikeMesh.enabled = false;
+        //}
     }
 
     private void OnDisable()

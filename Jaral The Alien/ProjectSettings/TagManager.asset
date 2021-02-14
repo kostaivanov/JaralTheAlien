@@ -12,6 +12,7 @@ TagManager:
   - LaserItemBigBlast
   - BigLaser
   - Magnet
+  - InGame
   layers:
   - Default
   - TransparentFX

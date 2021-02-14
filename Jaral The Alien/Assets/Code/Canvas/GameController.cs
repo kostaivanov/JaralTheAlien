@@ -108,26 +108,26 @@ public class GameController : MonoBehaviour
     {
         if (this.gameObject.activeSelf)
         {
-            if (PermanentFunctions.instance.score >= 200 && PermanentFunctions.instance.score < 400 && coolHasPlayed == false)
+            if (PermanentFunctions.instance.score >= 1000 && PermanentFunctions.instance.score < 2000 && coolHasPlayed == false)
             {
                 coolAnimator.gameObject.SetActive(true);
                 coolHasPlayed = true;
                 canvas_AS.PlayOneShot(labelSound[0]);
                 //gameController_AS.volume = 1f;
             }
-            else if(PermanentFunctions.instance.score >= 400 && PermanentFunctions.instance.score < 600 && goodHasPlayed == false)
+            else if(PermanentFunctions.instance.score >= 2000 && PermanentFunctions.instance.score < 3000 && goodHasPlayed == false)
             {
                 goodAnimator.gameObject.SetActive(true);
                 goodHasPlayed = true;
                 canvas_AS.PlayOneShot(labelSound[2]);
             }
-            else if (PermanentFunctions.instance.score >= 600 && PermanentFunctions.instance.score < 800 && awesomeHasPlayed == false)
+            else if (PermanentFunctions.instance.score >= 3000 && PermanentFunctions.instance.score < 4000 && awesomeHasPlayed == false)
             {
                 awesomeAnimator.gameObject.SetActive(true);
                 awesomeHasPlayed = true;
                 canvas_AS.PlayOneShot(labelSound[1]);
             }
-            else if (PermanentFunctions.instance.score >= 800 && godlikeHasplayed == false)
+            else if (PermanentFunctions.instance.score >= 4000 && godlikeHasplayed == false)
             {
                 godlikeMesh.gameObject.SetActive(true);
                 godlikeHasplayed = true;

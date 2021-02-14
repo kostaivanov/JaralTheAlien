@@ -76,7 +76,7 @@ public class ScoreController : MonoBehaviour
         yuppieScore = score;
         Debug.Log(yuppieScore);
         yield return new WaitForSecondsRealtime(2f);
-        if (score - yuppieScore >= 50)
+        if (score - yuppieScore >= 100)
         {
             canvasAS.PlayOneShot(yupppieSound);
             yuppieScore = 0;

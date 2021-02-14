@@ -72,6 +72,10 @@ public class PlayerMovement : MonoBehaviour
             dashButton.dashButtonClicked = false;
         }
 
+      
+    }
+    private void LateUpdate()
+    {
         if (isMoving == true)
         {
             if (joystick.gameObject.activeSelf == true)
@@ -82,12 +86,11 @@ public class PlayerMovement : MonoBehaviour
             {
                 Move(moveDirectionButtons);
             }
-            
-            
+
+
             //moveKeyIsPressed = false;
         }
     }
-
 
     //private void FixedUpdate()
     //{        

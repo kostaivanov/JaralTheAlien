@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class MenuController : MonoBehaviour
 {
+    [SerializeField] private AdMobBannerManager adMobLoading;
+
     [SerializeField] private GameObject allMovingObjects, player, loadingObj;
     //private PlayerHealth playerHealth;
     [SerializeField] private Button volumeButton, settingsButton, playButton, RecordsButton, exitButton, instructionsButton;
@@ -23,6 +25,8 @@ public class MenuController : MonoBehaviour
 
     private void OnEnable()
     {
+        adMobLoading.RequestBigBanner();
+
         Application.targetFrameRate = 30;
         allMovingObjects.SetActive(false);
 

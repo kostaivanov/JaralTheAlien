@@ -33,13 +33,13 @@ public class CollectLaserItem : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D otherObject)
     {
-        if (otherObject.tag == "Player")
+        if (otherObject.tag == "Player" && otherObject.GetComponent<PlayerHealth>().IsDead == false)
         {
             laserItemController.Disable();
             flyToPlayer = false;
         }
 
-        if (otherObject.tag == "Magnet")
+        if (otherObject.tag == "Magnet" && otherObject.GetComponentInParent<PlayerHealth>().IsDead == false)
         {
             timeStamp = Time.time;
             flyToPlayer = true;

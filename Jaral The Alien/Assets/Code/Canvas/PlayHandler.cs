@@ -8,6 +8,8 @@ using UnityEngine.UI;
 public class PlayHandler : MonoBehaviour, IPointerDownHandler
 {
     [SerializeField] private CanvasManager canvasManager;
+    [SerializeField] private AdMobBannerManager adMobLoading;
+
     [SerializeField] private ScoreController scoreController;
     [SerializeField] private Animator goAnimator, coolAnimator, goodAnimator, awesomeAnimator, godlikeMesh;
     [SerializeField] private SpriteRenderer player;
@@ -40,7 +42,9 @@ public class PlayHandler : MonoBehaviour, IPointerDownHandler
     //}
 
     public void OnPointerDown(PointerEventData eventData)
-    {      
+    {
+        adMobLoading.ShowBigBannerAd();
+
         StartCoroutine(LoadingScene());
 
         if (player.enabled == false)
@@ -94,5 +98,7 @@ public class PlayHandler : MonoBehaviour, IPointerDownHandler
         QualitySettings.vSyncCount = 0;
         canvasManager.SwitchCanvas(CanvasType.InGame);
         loadingObj.SetActive(false);
+
+        adMobLoading.DestroyBigBannerAd();
     }
 }

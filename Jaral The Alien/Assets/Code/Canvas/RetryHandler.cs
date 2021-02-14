@@ -8,9 +8,11 @@ public class RetryHandler : MonoBehaviour, IPointerDownHandler
 {
     [SerializeField] private CanvasManager canvasManager;
     [SerializeField] private AdMobManager adMobManager;
+    [SerializeField] private AdMobBannerManager adMobLoading;
 
+    [SerializeField] private Animator goAnimator;
 
-    [SerializeField] private GameObject objectPoolerObj;
+   [SerializeField] private GameObject objectPoolerObj;
     [SerializeField] private ScoreController scoreController;
     private ObjectPooler objectPooler;
     //private PlayerHealth playerHealth;
@@ -22,12 +24,25 @@ public class RetryHandler : MonoBehaviour, IPointerDownHandler
     [SerializeField] private Image retryImage, homeImage;
     [SerializeField] private Text retryText, homeText, gameOverText, pointsText;
 
+
     private void Start()
     {
         objectPooler = objectPoolerObj.GetComponent<ObjectPooler>();
     }
     public void OnPointerDown(PointerEventData eventData)
     {
+        PermanentFunctions.instance.lives++;
+        if (PermanentFunctions.instance.lives == 3)
+        {
+            PermanentFunctions.instance.lives = 0;
+            //Show rewarded video ad
+            adMobManager.ShowVideoRewardAd();
+        }
+        else
+        {
+            adMobLoading.ShowBigBannerAd();
+        }
+
         StartCoroutine(LoadingScene());
 
         foreach (GameObject pooledObj in objectPooler.pooledObjects)
@@ -65,12 +80,6 @@ public class RetryHandler : MonoBehaviour, IPointerDownHandler
     {
         loadingObj.SetActive(true);
 
-        if (PermanentFunctions.instance.lives == 0)
-        {
-            //Show rewarded video ad
-            adMobManager.ShowVideoRewardAd();
-        }
-
         retryButton.enabled = false;
         homeButton.enabled = false;
 
@@ -91,9 +100,13 @@ public class RetryHandler : MonoBehaviour, IPointerDownHandler
         //yield return SceneManager.LoadSceneAsync(0);
         yield return new WaitForSecondsRealtime(2f);
 
+        goAnimator.gameObject.SetActive(true);
+
         Application.targetFrameRate = 60;
         QualitySettings.vSyncCount = 0;
         canvasManager.SwitchCanvas(CanvasType.InGame);
         loadingObj.SetActive(false);
+
+        adMobLoading.DestroyBigBannerAd();
     }
 }

@@ -7,8 +7,8 @@ public class PermanentFunctions : MonoBehaviour
     internal static PermanentFunctions instance;
     [SerializeField] private ParticleSystem starsBackground;
 
-    internal int lives = 5;
-    internal int homeButtonClicks = 3;
+    internal int lives = 0;
+    internal int homeButtonClicks = 0;
 
     public float simulationSpeedDefault = 1.0F;
 
