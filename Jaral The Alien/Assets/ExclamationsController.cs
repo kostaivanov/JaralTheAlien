@@ -36,7 +36,6 @@ public class ExclamationsController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(animationsOff);
         if (gameOver.activeSelf == true && animationsOff == false)
         {
             if (goAnimator != null && goAnimator.GetCurrentAnimatorStateInfo(0).IsName("GO!"))
@@ -47,8 +46,6 @@ public class ExclamationsController : MonoBehaviour
             else if (coolAnimator != null && coolAnimator.GetCurrentAnimatorStateInfo(0).IsName("COOL!"))
             {
                 //coolAnimator.enabled = false;
-                Debug.Log("igrae li");
-
                 coolMesh.enabled = false;
             }
             else if (goodAnimator != null && goodAnimator.GetCurrentAnimatorStateInfo(0).IsName("GOOD!"))

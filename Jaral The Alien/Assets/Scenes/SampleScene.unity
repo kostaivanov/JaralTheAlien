@@ -137,6 +137,7 @@ GameObject:
   - component: {fileID: 1273041}
   - component: {fileID: 1273042}
   - component: {fileID: 1273043}
+  - component: {fileID: 1273044}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -374,6 +375,23 @@ MonoBehaviour:
   playerHealth: {fileID: 644257249}
   inGame: {fileID: 1203313229}
   gameOver: {fileID: 1761995241}
+--- !u!114 &1273044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1273035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac074103c41d34149b222e4e420063b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objetsSpawnPlaces:
+  - {fileID: 1508029526}
+  - {fileID: 496120534}
+  gameOverScreen: {fileID: 1761995241}
+  menuScreen: {fileID: 798553799}
 --- !u!1 &26809627
 GameObject:
   m_ObjectHideFlags: 0
@@ -23712,7 +23730,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &852297473
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32439,7 +32457,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1666733118
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -9,7 +9,8 @@ public class SpawnMeteorites : MonoBehaviour
     private string[] meteoritesNames = new string[] { "BigMeteorite" , "MediumMeteorite", "SmallMeteorite" };
     private string[] laserNames = new string[] { "LaserItem", "LaserItemRed" };
 
-    [SerializeField] private float addToSpawnTime;
+    [SerializeField] internal float addToSpawnTime;
+    internal float initialSpawnTime;
     public float chanceSpawnRare = 0.1f;
 
     private float InstantiationTimer;
@@ -18,6 +19,7 @@ public class SpawnMeteorites : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        initialSpawnTime = addToSpawnTime;
         //nextSpawnTimeBig = Time.time + addToSpawnTime;
         PermanentFunctions.instance.OnIncreaseSpeed += IncreaseRateOfSpawnMeteorites;
 
@@ -29,6 +31,7 @@ public class SpawnMeteorites : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(addToSpawnTime);
         if (inGame == null)
         {
             inGame = GameObject.FindGameObjectWithTag("InGame");

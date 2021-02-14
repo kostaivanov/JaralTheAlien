@@ -37,11 +37,10 @@ public class PlayerHealth : MonoBehaviour
     }
 
 
-    private void Awake()
-    {
-        //startingPosition = this.transform.position;
-        Debug.Log(this.transform.position);
-    }
+    //private void Awake()
+    //{
+    //    //startingPosition = this.transform.position;
+    //}
 
     private void Start()
     {
@@ -66,7 +65,6 @@ public class PlayerHealth : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(PermanentFunctions.instance.lives);
         if(PermanentFunctions.instance.laserCount <= 0)
         {
             PermanentFunctions.instance.canShoot = false;
