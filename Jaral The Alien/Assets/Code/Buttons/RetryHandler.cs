@@ -15,7 +15,7 @@ public class RetryHandler : MonoBehaviour, IPointerDownHandler
    [SerializeField] private GameObject objectPoolerObj;
     [SerializeField] private ScoreController scoreController;
     private ObjectPooler objectPooler;
-    //private PlayerHealth playerHealth;
+
     [SerializeField] private ParticleSystem starsBackground;
     [SerializeField] private GameController gameController;
     [SerializeField] private GameObject loadingObj;
@@ -29,12 +29,13 @@ public class RetryHandler : MonoBehaviour, IPointerDownHandler
     {
         objectPooler = objectPoolerObj.GetComponent<ObjectPooler>();
     }
+
     public void OnPointerDown(PointerEventData eventData)
     {
-        PermanentFunctions.instance.lives++;
-        if (PermanentFunctions.instance.lives == 3)
+        PermanentFunctions.instance.retryClicks++;
+        if (PermanentFunctions.instance.retryClicks == 3)
         {
-            PermanentFunctions.instance.lives = 0;
+            PermanentFunctions.instance.retryClicks = 0;
             //Show rewarded video ad
             adMobManager.ShowVideoRewardAd();
         }

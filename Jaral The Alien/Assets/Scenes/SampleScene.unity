@@ -375,6 +375,7 @@ MonoBehaviour:
   playerHealth: {fileID: 644257249}
   inGame: {fileID: 1203313229}
   gameOver: {fileID: 1761995241}
+  pauseMenu: {fileID: 985746329}
 --- !u!114 &1273044
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5809,8 +5810,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   allMovingObjects: {fileID: 1492313133}
   player: {fileID: 644257242}
-  canvasManager: {fileID: 1273040}
-  goAnimator: {fileID: 633627374}
 --- !u!1 &208168191
 GameObject:
   m_ObjectHideFlags: 0
@@ -6909,7 +6908,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvasManager: {fileID: 1273040}
-  adMobManager: {fileID: 0}
+  adMobManager: {fileID: 1837682004}
   objectPoolerObj: {fileID: 1800607620}
   lasersCountSlider: {fileID: 1528152244}
   bigBlastSlider: {fileID: 516185437}
@@ -17693,6 +17692,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MainCamera: {fileID: 519420031}
+  inGameScreen: {fileID: 1203313229}
 --- !u!58 &644257248
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -24229,11 +24229,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   adMobManager: {fileID: 1837682004}
   joystick: {fileID: 2929252283821042477}
-  goObj: {fileID: 633627370}
-  coolObj: {fileID: 2038280959}
-  goodObj: {fileID: 1720754021}
-  awesomeObj: {fileID: 642249643}
-  godlike_Obj: {fileID: 999222849}
+  goObject: {fileID: 633627370}
+  coolObject: {fileID: 2038280959}
+  goodObject: {fileID: 1720754021}
+  awesomeObject: {fileID: 642249643}
+  godlikeObject: {fileID: 999222849}
   playerSoundController: {fileID: 644257252}
 --- !u!114 &985746332
 MonoBehaviour:
@@ -37136,7 +37136,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1761995242}
   - component: {fileID: 1761995244}
-  - component: {fileID: 1761995243}
   - component: {fileID: 1761995245}
   m_Layer: 5
   m_Name: GameOverMenu
@@ -37168,26 +37167,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1761995243
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1761995241}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78397dd8b609388428b88039a8d4e8f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  adMobManager: {fileID: 0}
-  joystick: {fileID: 2929252283821042477}
-  goObj: {fileID: 633627370}
-  coolObj: {fileID: 2038280959}
-  goodObj: {fileID: 1720754021}
-  awesomeObj: {fileID: 642249643}
-  godlike_Obj: {fileID: 999222849}
-  playerSoundController: {fileID: 644257252}
 --- !u!114 &1761995244
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37213,17 +37192,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ccbc9ee1cbb7af4195c70ffb50d987a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  joystick: {fileID: 2929252283821042477}
   adMobManager: {fileID: 1837682004}
   adMobLoading: {fileID: 1780541703}
   allMovingObjects: {fileID: 1492313133}
   player: {fileID: 644257242}
   scoreText: {fileID: 1655726775}
-  goObj: {fileID: 633627370}
-  coolObj: {fileID: 2038280959}
-  goodObj: {fileID: 1720754021}
-  awesomeObj: {fileID: 642249643}
-  godlike_Obj: {fileID: 999222849}
   retryButton: {fileID: 329842345}
   homeButton: {fileID: 2081020875}
   retryImage: {fileID: 329842346}

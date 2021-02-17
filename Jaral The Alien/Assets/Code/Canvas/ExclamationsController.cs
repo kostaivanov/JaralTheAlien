@@ -9,7 +9,7 @@ public class ExclamationsController : MonoBehaviour
     private MeshRenderer goMesh, coolMesh, goodMesh, awesomeMesh, godlikeMesh;
 
     [SerializeField] private PlayerHealth playerHealth;
-    [SerializeField] private GameObject inGame, gameOver;
+    [SerializeField] private GameObject inGame, gameOver, pauseMenu;
 
     private bool animationsOff;
 

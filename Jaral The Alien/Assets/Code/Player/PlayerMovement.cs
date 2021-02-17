@@ -122,7 +122,7 @@ public class PlayerMovement : MonoBehaviour
 
         //joystick_X = joystick.Horizontal;
         joystick_Y = joystick.Vertical;
-
+        Debug.Log("asdasdsaadsdasdasd");
         moveDirectionButtons = new Vector2(0, move_Y).normalized;
         moveDirectionJoystick = new Vector2(0, joystick_Y).normalized;
         isMoving = true;

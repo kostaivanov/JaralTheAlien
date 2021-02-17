@@ -7,7 +7,7 @@ public class PermanentFunctions : MonoBehaviour
     internal static PermanentFunctions instance;
     [SerializeField] private ParticleSystem starsBackground;
 
-    internal int lives = 0;
+    internal int retryClicks = 0;
     internal int homeButtonClicks = 0;
 
     public float simulationSpeedDefault = 1.0F;
@@ -23,8 +23,6 @@ public class PermanentFunctions : MonoBehaviour
     internal float meteoriteSpeed = 14f;
 
     internal float meteoriteSpeedIncrease = 3f;
-    //internal float starsStartSpeedDefault = 5f;
-    //internal float starsInitialSpeed = 5f;
 
     internal float starsSimulationSpeedDefault = 1f;
 
@@ -54,7 +52,6 @@ public class PermanentFunctions : MonoBehaviour
 
     private void Start()
     {
-
         //InvokeRepeating("OnIncreaseSpeed", 60f, 60f);
         meteoriteSpeed = 14f;
     }
@@ -73,16 +70,6 @@ public class PermanentFunctions : MonoBehaviour
 
         //emission.rateOverTime = main.simulationSpeed * 50f;
     }
-
-    //internal void SetTodefaultSpeed()
-    //{
-    //    var main = starsBackground.main;
-    //    //var emission = starsBackground.emission;
-
-    //    //starsSpeed += speedIncrease;
-    //    main.simulationSpeed = simulationSpeedDefault;
-    //    //emission.rateOverTime = 50f;
-    //}
 
     internal IEnumerator IncreaseSpeedObjectAtIntervals(float secondsBetweenSpawns)
     {

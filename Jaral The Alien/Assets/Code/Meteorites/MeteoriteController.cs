@@ -33,6 +33,7 @@ public class MeteoriteController : MonoBehaviour
         
         Invoke("Disable", 3f);
     }
+
     private void OnDisable()
     {
         CancelInvoke(); 
@@ -47,13 +48,6 @@ public class MeteoriteController : MonoBehaviour
         //rigidBody.velocity = Vector2.left * PermanentFunctions.instance.meteoriteSpeed;
     }
 
-  internal void Disable()
-    {
-        this.gameObject.SetActive(false);
-        move = false;
-    }
-
-
     private void FixedUpdate()
     {
         if (move == true)
@@ -63,6 +57,12 @@ public class MeteoriteController : MonoBehaviour
                 rigidBody.velocity = Vector2.left * PermanentFunctions.instance.meteoriteSpeed;
             }
         }
+    }
+
+    internal void Disable()
+    {
+        this.gameObject.SetActive(false);
+        move = false;
     }
 
 }

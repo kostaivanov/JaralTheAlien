@@ -10,7 +10,6 @@ public class HomeHandler : MonoBehaviour, IPointerDownHandler
     [SerializeField] private CanvasManager canvasManager;
     [SerializeField] private AdMobManager adMobManager;
 
-    //[SerializeField] private GameObject player;
     [SerializeField] private GameObject objectPoolerObj;
     [SerializeField] private Slider lasersCountSlider, bigBlastSlider;
     [SerializeField] private ParticleSystem starsBackground;

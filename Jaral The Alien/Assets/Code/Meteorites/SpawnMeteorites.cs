@@ -31,7 +31,6 @@ public class SpawnMeteorites : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(addToSpawnTime);
         if (inGame == null)
         {
             inGame = GameObject.FindGameObjectWithTag("InGame");

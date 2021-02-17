@@ -5,9 +5,10 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
+    private const int startHealth = 90;
+
     internal int health = 90;
     private int damage => 30;
-    private bool hastakenDamage;
 
     [SerializeField] private CanvasManager canvasManager;
 
@@ -23,7 +24,6 @@ public class PlayerHealth : MonoBehaviour
     private PlayerMovement playerMovement;
     private PlayerSoundController playerSoundController;
     internal Vector3 startingPosition = new Vector2(-5f, 0);
-    private bool gotLaser = false;
     private int laserCount = 0;
 
     [SerializeField] private CapsuleCollider2D magnetCapsuleCollider;
@@ -65,12 +65,12 @@ public class PlayerHealth : MonoBehaviour
 
     private void Update()
     {
-        if(PermanentFunctions.instance.laserCount <= 0)
+        if (PermanentFunctions.instance.canShoot == true && PermanentFunctions.instance.laserCount <= 0)
         {
             PermanentFunctions.instance.canShoot = false;
         }
 
-        if (PermanentFunctions.instance.laserBigBlastCount <= 0)
+        if (PermanentFunctions.instance.canShootBigBlast == true && PermanentFunctions.instance.laserBigBlastCount <= 0)
         {
             PermanentFunctions.instance.canShootBigBlast = false;
         }
@@ -98,7 +98,6 @@ public class PlayerHealth : MonoBehaviour
                 redShell.SetActive(true);
                 PermanentFunctions.instance.laserBigBlastCount = 1;
                 bigBlastSlider.value = PermanentFunctions.instance.laserBigBlastCount;
-                //Debug.Log("red");
                 PermanentFunctions.instance.canShoot = false;
                 //StartCoroutine(WaitUntilDisable());
                 Invoke("WaitUntilDisableRedShell", 3f);
@@ -139,7 +138,6 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage()
     {
-
         if (damage <= 0)
         {
             return;
@@ -166,7 +164,6 @@ public class PlayerHealth : MonoBehaviour
             
             KillPlayerAndRestartGame();
         }
-
     }
 
     private void KillPlayerAndRestartGame()
@@ -175,14 +172,6 @@ public class PlayerHealth : MonoBehaviour
 
         magnetCapsuleCollider.enabled = false;
         playerTriggerCollider.enabled = false;
-
-        //if (PermanentFunctions.instance.lives == 0)
-        //{
-        //    PermanentFunctions.instance.lives = 3;
-
-        //}
-        //PermanentFunctions.instance.lives--;
-
 
         playerSoundController.PlaySoundDead();
         playerSoundController.StopSoundMovingShip();
@@ -218,8 +207,7 @@ public class PlayerHealth : MonoBehaviour
     }
 
     private void WaitUntilDisableGreenShell()
-    {
-        
+    {       
         //yield return new WaitForSecondsRealtime(3f);
         greenShell.SetActive(false);
 
@@ -259,7 +247,7 @@ public class PlayerHealth : MonoBehaviour
         magnetCapsuleCollider.enabled = true;
         playerTriggerCollider.enabled = true;
 
-        health = 90;
+        health = startHealth;
         IsDead = false;
     }
 }

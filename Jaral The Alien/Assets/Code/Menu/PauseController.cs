@@ -8,26 +8,27 @@ public class PauseController : MonoBehaviour
     [SerializeField] private AdMobManager adMobManager;
 
     [SerializeField] private Joystick joystick;
-    [SerializeField] private GameObject goObj, coolObj, goodObj, awesomeObj, godlike_Obj;
+    [SerializeField] private GameObject goObject, coolObject, goodObject, awesomeObject, godlikeObject;
     private Animator goAnimator, coolAnimator, goodAnimator, awesomeAnimator, godlikeAnimator;
     private MeshRenderer goMesh, coolMesh, goodMesh, awesomeMesh, godlikeMesh;
     [SerializeField] private PlayerSoundController playerSoundController;
+
     private void Awake()
     {
-        goAnimator = goObj.GetComponent<Animator>();
-        goMesh = goObj.GetComponent<MeshRenderer>();
+        goAnimator = goObject.GetComponent<Animator>();
+        goMesh = goObject.GetComponent<MeshRenderer>();
 
-        coolAnimator = coolObj.GetComponent<Animator>();
-        coolMesh = coolObj.GetComponent<MeshRenderer>();
+        coolAnimator = coolObject.GetComponent<Animator>();
+        coolMesh = coolObject.GetComponent<MeshRenderer>();
 
-        goodAnimator = goodObj.GetComponent<Animator>();
-        goodMesh = goodObj.GetComponent<MeshRenderer>();
+        goodAnimator = goodObject.GetComponent<Animator>();
+        goodMesh = goodObject.GetComponent<MeshRenderer>();
 
-        awesomeAnimator = awesomeObj.GetComponent<Animator>();
-        awesomeMesh = awesomeObj.GetComponent<MeshRenderer>();
+        awesomeAnimator = awesomeObject.GetComponent<Animator>();
+        awesomeMesh = awesomeObject.GetComponent<MeshRenderer>();
 
-        godlikeAnimator = godlike_Obj.GetComponent<Animator>();
-        godlikeMesh = godlike_Obj.GetComponent<MeshRenderer>();
+        godlikeAnimator = godlikeObject.GetComponent<Animator>();
+        godlikeMesh = godlikeObject.GetComponent<MeshRenderer>();
     }
 
     private void OnEnable()
@@ -40,8 +41,10 @@ public class PauseController : MonoBehaviour
 
         Application.targetFrameRate = 30;
         Time.timeScale = 0;
+
         joystick.input = Vector2.zero;
         joystick.handle.anchoredPosition = Vector2.zero;
+
         playerSoundController.StopSoundMovingShip();
 
         if (goAnimator.GetCurrentAnimatorStateInfo(0).IsName("GO!"))
@@ -75,6 +78,7 @@ public class PauseController : MonoBehaviour
     {
         Application.targetFrameRate = 60;
         Time.timeScale = 1;
+
         if (playerSoundController != null)
         {
             playerSoundController.PlaySoundIdleShip();

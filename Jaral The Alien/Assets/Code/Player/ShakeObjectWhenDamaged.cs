@@ -25,7 +25,9 @@ public class ShakeObjectWhenDamaged : MonoBehaviour
     private void OnValidate()
     {
         if (delayBetweenShakes > time)
+        {
             delayBetweenShakes = time;
+        }
     }
 
     public void BeginShakingObject()
@@ -55,7 +57,5 @@ public class ShakeObjectWhenDamaged : MonoBehaviour
                 yield return null;
             }
         }
-
-        //transform.position = startPosition;
     }
 }

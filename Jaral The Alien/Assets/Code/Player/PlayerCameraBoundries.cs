@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerCameraBoundries : MonoBehaviour
 {
     [SerializeField] private Camera MainCamera;
+    [SerializeField] private GameObject inGameScreen;
     private Vector2 screenBounds;
 
     private float objectWidth;
@@ -21,9 +22,12 @@ public class PlayerCameraBoundries : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
-        Vector3 viewPosition = transform.position;
-        viewPosition.x = Mathf.Clamp(viewPosition.x, screenBounds.x * -1 + objectWidth, screenBounds.x - objectWidth);
-        viewPosition.y = Mathf.Clamp(viewPosition.y, screenBounds.y * -1 + objectHeight, screenBounds.y - objectHeight);
-        transform.position = viewPosition;
+        if (inGameScreen.activeSelf == true)
+        {
+            Vector3 viewPosition = transform.position;
+            viewPosition.x = Mathf.Clamp(viewPosition.x, screenBounds.x * -1 + objectWidth, screenBounds.x - objectWidth);
+            viewPosition.y = Mathf.Clamp(viewPosition.y, screenBounds.y * -1 + objectHeight, screenBounds.y - objectHeight);
+            transform.position = viewPosition;
+        }
     }
 }

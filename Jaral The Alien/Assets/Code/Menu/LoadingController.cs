@@ -5,9 +5,8 @@ using UnityEngine;
 public class LoadingController : MonoBehaviour
 {
     [SerializeField] private GameObject allMovingObjects, player;
-    [SerializeField] private CanvasManager canvasManager;
-    [SerializeField] private Animator goAnimator;
-
+    //[SerializeField] private CanvasManager canvasManager;
+    //[SerializeField] private Animator goAnimator;
 
     private void OnDisable()
     {
@@ -17,7 +16,5 @@ public class LoadingController : MonoBehaviour
             allMovingObjects.SetActive(true);
             player.SetActive(true);
         }
-    }
-
-   
+    } 
 }
