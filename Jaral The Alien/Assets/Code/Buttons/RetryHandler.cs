@@ -60,6 +60,8 @@ public class RetryHandler : MonoBehaviour, IPointerDownHandler
             }
         }
 
+        PlayGameServices.AddScoreToLeaderboard(GPGSIds.leaderboard_jaral_the_alien_leaderboard, (long)PermanentFunctions.instance.score);
+
         PermanentFunctions.instance.score = 0;
         scoreController.scoreText.text = PermanentFunctions.instance.score.ToString();
 

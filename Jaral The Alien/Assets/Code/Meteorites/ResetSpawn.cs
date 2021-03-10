@@ -37,7 +37,6 @@ public class ResetSpawn : MonoBehaviour
             if (valuesAreReset == true)
             {
                 valuesAreReset = false;
-                Debug.Log("kolko pyti se resetva boola");
             }
         }
     }

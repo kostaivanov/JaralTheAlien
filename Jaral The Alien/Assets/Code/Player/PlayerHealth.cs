@@ -74,8 +74,6 @@ public class PlayerHealth : MonoBehaviour
         {
             PermanentFunctions.instance.canShootBigBlast = false;
         }
-        //Debug.Log("can shoot bool - " + PermanentFunctions.instance.canShoot);
-        //Debug.Log("can big shoot bool - " + PermanentFunctions.instance.canShootBigBlast);
     }
 
     private void OnTriggerEnter2D(Collider2D otherObject)

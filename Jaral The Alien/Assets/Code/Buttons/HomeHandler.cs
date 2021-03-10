@@ -51,6 +51,9 @@ public class HomeHandler : MonoBehaviour, IPointerDownHandler
                 pooledObj.SetActive(false);
             }
         }
+
+        PlayGameServices.AddScoreToLeaderboard(GPGSIds.leaderboard_jaral_the_alien_leaderboard, (long)PermanentFunctions.instance.score);
+
         ResetPlayerHealthValues();
 
         if (starsBackground != null)

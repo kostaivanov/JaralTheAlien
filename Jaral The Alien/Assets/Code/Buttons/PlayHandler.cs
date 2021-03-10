@@ -34,11 +34,12 @@ public class PlayHandler : MonoBehaviour, IPointerDownHandler
 
     //private void Update()
     //{
-    //    Debug.Log(this.animatorGo.GetCurrentAnimatorStateInfo(0).IsName("GO!"));
-    //    if(this.animatorGo.GetCurrentAnimatorStateInfo(0).IsName("GO!"))
-    //    {
-    //        animatorGo.gameObject.SetActive(false);
-    //    }
+        //Debug.Log(this.animatorGo.GetCurrentAnimatorStateInfo(0).IsName("GO!"));
+        //if (this.animatorGo.GetCurrentAnimatorStateInfo(0).IsName("GO!"))
+        //{
+        //    animatorGo.gameObject.SetActive(false);
+        //}
+
     //}
 
     public void OnPointerDown(PointerEventData eventData)
@@ -58,8 +59,10 @@ public class PlayHandler : MonoBehaviour, IPointerDownHandler
         {
             player.gameObject.GetComponent<PlayerHealth>().ResetPlayerValues();
         }
+
         PermanentFunctions.instance.score = 0;
         scoreController.scoreText.text = PermanentFunctions.instance.score.ToString();
+
     }
 
     internal IEnumerator LoadingScene()
