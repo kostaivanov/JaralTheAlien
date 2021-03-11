@@ -41,7 +41,7 @@ public class ScoreController : MonoBehaviour
         if (yuppieTimer > 1f)
         {
             var difference = score - yuppieScore;
-            if (difference > 50 && canvasAS.isPlaying == false)
+            if (difference > 80 && canvasAS.isPlaying == false)
             {
                 canvasAS.PlayOneShot(yupppieSound);
                 Debug.Log("Yuppie - " + yuppieScore);
@@ -65,25 +65,25 @@ public class ScoreController : MonoBehaviour
         //}
     }
 
-    internal IEnumerator CountYuppieTime()
-    {
-        //if (yuppieTime > 3f)
-        //{
-        //    yuppieScore = score;
-        //    yuppieTime += 1 * Time.deltaTime;
-        //}
+    //internal IEnumerator CountYuppieTime()
+    //{
+    //    //if (yuppieTime > 3f)
+    //    //{
+    //    //    yuppieScore = score;
+    //    //    yuppieTime += 1 * Time.deltaTime;
+    //    //}
 
-        yuppieScore = score;
-        Debug.Log(yuppieScore);
-        yield return new WaitForSecondsRealtime(2f);
-        if (score - yuppieScore >= 100)
-        {
-            canvasAS.PlayOneShot(yupppieSound);
-            yuppieScore = 0;
-        }
-        else
-        {
-            yuppieScore = 0;
-        }
-    }
+    //    yuppieScore = score;
+    //    Debug.Log(yuppieScore);
+    //    yield return new WaitForSecondsRealtime(2f);
+    //    if (score - yuppieScore >= 100)
+    //    {
+    //        canvasAS.PlayOneShot(yupppieSound);
+    //        yuppieScore = 0;
+    //    }
+    //    else
+    //    {
+    //        yuppieScore = 0;
+    //    }
+    //}
 }

@@ -7,7 +7,6 @@ public class ResumeHandler : MonoBehaviour, IPointerDownHandler
 {
     [SerializeField] private CanvasManager canvasManager;
 
-
     public void OnPointerDown(PointerEventData eventData)
     {
         canvasManager.SwitchCanvas(CanvasType.InGame);

@@ -47,7 +47,6 @@ public class MusicController : MonoBehaviour
 
     private void StartMusic(AudioClip audioTrack, AudioSource audioSource)
     {
-        //Debug.Log("broq te");
         if (audioSource != null && audioTrack != null)
         {
             audioSource.clip = audioTrack;

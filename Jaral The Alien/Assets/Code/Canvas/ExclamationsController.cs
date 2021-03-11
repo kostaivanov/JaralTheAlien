@@ -68,7 +68,6 @@ public class ExclamationsController : MonoBehaviour
 
         if (animationsOff == true && inGame.activeSelf == true)
         {
-            Debug.Log("igrae li 22222");
             animationsOff = false;
 
             goMesh.enabled = true;

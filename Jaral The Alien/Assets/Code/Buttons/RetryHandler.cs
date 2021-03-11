@@ -12,7 +12,7 @@ public class RetryHandler : MonoBehaviour, IPointerDownHandler
 
     [SerializeField] private Animator goAnimator;
 
-   [SerializeField] private GameObject objectPoolerObj;
+    [SerializeField] private GameObject objectPoolerObj;
     [SerializeField] private ScoreController scoreController;
     private ObjectPooler objectPooler;
 
@@ -74,9 +74,7 @@ public class RetryHandler : MonoBehaviour, IPointerDownHandler
         gameController.coolHasPlayed = false;
         gameController.goodHasPlayed = false;
         gameController.awesomeHasPlayed = false;
-        gameController.godlikeHasplayed = false;
-
-     
+        gameController.godlikeHasplayed = false;    
     }
 
     internal IEnumerator LoadingScene()

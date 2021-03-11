@@ -7,7 +7,6 @@ public class OptionsButtonOnOff : MonoBehaviour, IPointerClickHandler
 {
     [SerializeField] private GameObject optionsPanel;
 
-
     public void OnPointerClick(PointerEventData eventData)
     {
         if (optionsPanel.activeSelf == false)

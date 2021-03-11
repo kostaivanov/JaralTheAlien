@@ -24,7 +24,6 @@ public class ResetSpawn : MonoBehaviour
         {
             if (valuesAreReset == false)
             {
-                Debug.Log("kolko pyti se resetvat spawnovete");
                 valuesAreReset = true;
                 foreach (SpawnMeteorites spawnPlace in objetsSpawnPlaces)
                 {
